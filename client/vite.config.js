@@ -4,7 +4,7 @@ export default defineConfig({
   envDir: "../",
   server: {
     port: 3000,
-    allowedHosts: "all",
+    allowedHosts: true,
     proxy: {
       "/api": {
         target: "http://localhost:3001",
