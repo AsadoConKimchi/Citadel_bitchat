@@ -38,10 +38,12 @@ app.post("/api/token", async (req, res) => {
     });
 
     const data = await response.json();
+    console.log("Discord API response status:", response.status);
+    console.log("Discord API response data:", data);
 
     if (!response.ok) {
       console.error("Discord token exchange failed:", data);
-      return res.status(response.status).json({ error: "Token exchange failed" });
+      return res.status(response.status).json({ error: "Token exchange failed", details: data });
     }
 
     return res.json({ access_token: data.access_token });
@@ -58,4 +60,6 @@ app.get("*", (_req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`CLIENT_ID loaded: ${!!process.env.VITE_DISCORD_CLIENT_ID}`);
+  console.log(`CLIENT_SECRET loaded: ${!!process.env.DISCORD_CLIENT_SECRET}`);
 });
