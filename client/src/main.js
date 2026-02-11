@@ -1,7 +1,7 @@
 import { DiscordSDK } from "@discord/embedded-app-sdk";
 
 const DEFAULT_GEOHASH = "wy";
-const BITCHAT_BASE_URL = "https://bitchat.land";
+const BITCHAT_BASE_URL = "/bitchat";
 
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
 
