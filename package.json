@@ -1,0 +1,23 @@
+{
+  "name": "citadel-bitchat",
+  "version": "1.0.0",
+  "description": "Discord Activity for anonymous bitchat.land chat integration",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "npm-run-all2": "^7.0.0"
+  },
+  "author": "AsadoConKimchi",
+  "license": "MIT"
+}

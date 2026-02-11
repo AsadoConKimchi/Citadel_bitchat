@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "gg sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  background-color: #313338;
+  color: #dbdee1;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading screen */
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #4e5058;
+  border-top-color: #5865f2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading p {
+  font-size: 14px;
+  color: #b5bac1;
+}
+
+/* Error screen */
+#error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+#error p {
+  font-size: 16px;
+  color: #dbdee1;
+}
+
+#error .error-detail {
+  font-size: 13px;
+  color: #b5bac1;
+  max-width: 400px;
+  word-break: break-word;
+}
+
+#error button {
+  margin-top: 8px;
+  padding: 8px 20px;
+  background-color: #5865f2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+#error button:hover {
+  background-color: #4752c4;
+}
+
+/* Header */
+#header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #2b2d31;
+  border-bottom: 1px solid #1e1f22;
+  min-height: 42px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.header-label {
+  font-size: 13px;
+  color: #b5bac1;
+  white-space: nowrap;
+}
+
+.geohash-badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0b232;
+  background-color: rgba(240, 178, 50, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.change-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #dbdee1;
+  background-color: #4e5058;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.change-btn:hover {
+  background-color: #6d6f78;
+}
+
+/* Geohash input group */
+.geohash-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.geohash-input-group.hidden {
+  display: none;
+}
+
+.geohash-input {
+  width: 140px;
+  padding: 4px 8px;
+  font-size: 13px;
+  color: #dbdee1;
+  background-color: #1e1f22;
+  border: 1px solid #4e5058;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.geohash-input:focus {
+  border-color: #5865f2;
+}
+
+.go-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #5865f2;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.go-btn:hover {
+  background-color: #4752c4;
+}
+
+.cancel-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #b5bac1;
+  background-color: transparent;
+  border: 1px solid #4e5058;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.cancel-btn:hover {
+  background-color: #4e5058;
+}
+
+/* Iframe container */
+#iframe-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+#bitchat-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #1e1f22;
+}
+
+/* Button hidden helper */
+.change-btn.hidden {
+  display: none;
+}
